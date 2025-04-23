@@ -35,25 +35,26 @@ body{
     align-items: center;
 }
 #closeToast,#burgerIcon>img,#ordersBtn,#searchIcon,#clearFilterBtn,#quickFilters>button,.btnEditOrder,.btnSaveOrder,.btnRemoveUnit,.btnAddUnit,.btnDeleteItem,
-aside>span,#orderDetails>img{
+aside>span,#orderDetails>img,#ordersBtn{
     cursor: pointer;
 }
 #toast{
-    /* position: absolute; */
-    right: calc(-100% + 120px);
-    top: calc(-100% + 120px);
-    transform: translateX(-50%) translateY(+50%);
+    display: flex;
+    position: absolute;
+    top: 12px;
+    right: 15px;
     padding: 0;
     text-align: center;
-    height: 46px;
+    height: 36px;
+    overflow-y: scroll;
     border: 2px solid;
     border-radius: 5px 0 0 5px;
     width: fit-content;
+    max-width: calc(100% - 35px);
     align-items: center;
     justify-content: space-between;
     background-color: #f0f8ff;
     border-color: var(--info-border);
-    z-index: 0;
 }
 #toast>*{margin: 5px;}
 #orderDetails{
@@ -221,11 +222,11 @@ menu{
 }
 aside{
     position: absolute;
-    right: 10px;
+    left: 10px;
     width: 20px;
     height: fit-content;
     color: aliceblue;
-    background: rgba(47, 47, 47, 0.468);
+    background: rgba(91, 29, 29, 0.468);
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -233,10 +234,8 @@ aside{
     align-items: center;
     justify-content: center;
 }
+aside>*{margin:2px 0;}
 #ordersBtn{
-    position: absolute;
-    right: 15px;
-    bottom: 120px;
     width: 40px;
     height: 40px;
     background: var(--accent);
@@ -284,14 +283,23 @@ aside{
     filter: invert();
 }
 #logs{display: none;}
+#searchBar{
+    position: absolute;
+    bottom: 150px;
+    right: 5px;
+}
+#ordersBtn{
+    margin: 10px;
+    position: relative;
+}
 search{
-    bottom: 60px;
     border: none;
     min-width: 55px;
     width: fit-content;
     justify-content: space-between;
     align-items: center;
 }
+
 search>img{
     width: 32px;
 }
