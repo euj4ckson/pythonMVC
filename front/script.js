@@ -79,7 +79,7 @@ function changeToastState(msg,type=null){
         error:'#ff7b76',
         errorBorder:'#ff0800',
     }
-    toast.showModal()
+    toast.style.display='flex';
     toast.style.background=states[type]
     toast.style.borderColor=states[`${type}Border`]
     toast.querySelector('span').textContent=msg
@@ -118,8 +118,9 @@ orderBtnDelete.addEventListener('click',(e)=>{
 orderBtnDelete.querySelector('img').addEventListener('click',(e)=>{
     deleteOrderItem(e.target.parentNode.parentNode.parentNode.id)
 })
+// toggleVisibility(toast)
 orders.addEventListener('click',()=>{order.showModal();})
 cardBtnAdd.addEventListener('click',()=>console.log(cardBtnAdd))
 orderBtnClose.addEventListener('click',()=>{order.close()})
-closeToast.addEventListener('click',()=>toast.close())
+closeToast.addEventListener('click',()=>toggleVisibility(toast))
 filters.forEach((filter)=>{filter.addEventListener('click',(e)=>{filterList(e.target);setUIstate()})})
